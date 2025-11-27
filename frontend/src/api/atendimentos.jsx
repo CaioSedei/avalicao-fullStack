@@ -10,6 +10,16 @@ export const getAtendimentos = async () => {
     return response.data.atendimentos
 }
 
+export const getSelfAtendimentos = async () => {
+    const response = await api.get('/api/atendimentosself/')
+
+    if (response.status !== 200) {
+        return [] // throw new Error('')
+    }
+
+    return response.data.atendimentos
+}
+
 export const createAtendimento = async (atendimento) => {
     const response = await api.post('/api/atendimento', atendimento)
 

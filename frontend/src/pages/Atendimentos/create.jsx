@@ -24,7 +24,7 @@ export default function CreateAtendimento() {
         const response = await createAtendimento(atendimento)
 
         if (response.status === 201) {
-            navigate('/atendimentos')
+            navigate('/self/atendimentos')
         }
     }
 
@@ -63,6 +63,7 @@ export default function CreateAtendimento() {
                     onClick={handleSave}
                 >Enviar</button>
             </form>
+
         </main>
     )
 

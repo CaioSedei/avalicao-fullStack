@@ -4,13 +4,17 @@ import { loginCliente } from '../../api/clientes';
 import { AuthContext } from '../../auth/Content'
 
 export default function Login() {
-    const { login } = useContext(AuthContext) 
+    const { login } = useContext(AuthContext)
     const navigate = useNavigate();
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
 
     const handleBackClick = () => {
         navigate('/');
+    };
+
+    const handleSignUP = () => {
+        navigate('/signup');
     };
 
     const handleLogin = async (e) => {
@@ -47,6 +51,11 @@ export default function Login() {
                 >
                     Voltar
                 </button>
+                <p className='text-signup'>Não possui conta?
+                    <button className='button-signup'
+                        onClick={handleSignUP}
+                    >Cadastre-se</button>
+                </p>
             </form>
         </div>
     );

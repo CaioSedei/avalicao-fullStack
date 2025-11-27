@@ -37,7 +37,7 @@ export default function UpdateAtendimento() {
         const response = await updateAtendimento(prevAtendimento.id, atendimento)
 
         if (response.status === 200) {
-            navigate('/atendimentos')
+            navigate('/self/atendimentos')
             console.log("atendimento alterado com sucesso")
         } else {
             console.log("Erro ao alterar o atendimento")

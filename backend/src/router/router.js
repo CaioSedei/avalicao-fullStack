@@ -13,10 +13,11 @@ router.post('/cliente/', ControllerCliente.Create)
 router.put('/cliente/:id', authMiddleware(), ControllerCliente.Update)
 router.delete('/cliente/:id', authMiddleware(), ControllerCliente.Delete)
 
-router.get('/atendimentos/', ControllerAtendimento.FindAll)
-router.get('/atendimento/:id', ControllerAtendimento.FindOne)
-router.post('/atendimento/:id', ControllerAtendimento.Create)
-router.put('/atendimento/:id', ControllerAtendimento.Update)
-router.delete('/atendimento/:id', ControllerAtendimento.Delete)
+router.get('/atendimentos/', authMiddleware(), ControllerAtendimento.FindAll)
+router.get('/atendimentosself/', authMiddleware(), ControllerAtendimento.FindAllByCliente)
+router.get('/atendimento/:id', authMiddleware(), ControllerAtendimento.FindOne)
+router.post('/atendimento/', authMiddleware(), ControllerAtendimento.Create)
+router.put('/atendimento/:id', authMiddleware(), ControllerAtendimento.Update)
+router.delete('/atendimento/:id', authMiddleware(), ControllerAtendimento.Delete)
 
 export default router

@@ -13,7 +13,7 @@ function Home() {
             {
                 !token
                     ? null
-                    : <Link to='/atendimentos'>
+                    : <Link to='/self/atendimentos'>
                         <button>
                             Atendimentos
                         </button>
